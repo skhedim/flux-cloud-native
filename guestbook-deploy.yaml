@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook-v2
+  labels:
+    app: guestbook
+    version: "2.0"
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  selector:
+    matchLabels:
+      app: guestbook
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        version: "2.0"
+    spec:
+      containers:
+      - name: guestbook
+        image: sebkhedim/guestbook:0.1.0
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - name: http
+          containerPort: 3000
