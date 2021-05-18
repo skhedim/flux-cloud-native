@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-v2
+  namespace: guestbook
   labels:
     app: guestbook
     version: "2.0"
@@ -11,7 +12,7 @@ spec:
   selector:
     matchLabels:
       app: guestbook
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
