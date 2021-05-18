@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: guestbook
-        image: sebkhedim/guestbook:sha-04e8821
+        image: sebkhedim/guestbook:sha-b9289f7
         resources:
           requests:
             cpu: 100m
